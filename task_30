@@ -1,0 +1,16 @@
+# Заполните массив элементами арифметической прогрессии.
+# Её первый элемент, разность и количество элементов нужно ввести с клавиатуры.
+# Формула для получения n-го члена прогрессии: an = a1 + (n-1) * d.
+# Каждое число вводится с новой строки.
+
+first_element = int(input("Введите первый элемент арифметической прогрессии: "))
+step = int(input("Введите шаг арифметической прогрессии: "))
+size = int(input("Введите требуемое количество элементов арифметической прогрессии: "))
+
+arithmetic_progression = []
+arithmetic_progression.append(first_element)
+for i in range(1, size):
+    num = first_element + (i)*step
+    arithmetic_progression.append(num)
+
+print("Элементы прогрессии: ", arithmetic_progression)
