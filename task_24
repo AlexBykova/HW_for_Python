@@ -18,8 +18,5 @@ for i in range (size):
 for i in range (gripping_machine_size-1, size):
     if harvesting_from_a_bush[i] + harvesting_from_a_bush[i-1] + harvesting_from_a_bush[i-2] > max_harvest:
         max_harvest = harvesting_from_a_bush[i] + harvesting_from_a_bush[i-1] + harvesting_from_a_bush[i-2]
-for i in range (gripping_machine_size-1):
-    if harvesting_from_a_bush[i] + harvesting_from_a_bush[size-(i+1)] + harvesting_from_a_bush[size-(i+2)] > max_harvest:
-        max_harvest = harvesting_from_a_bush[i] + harvesting_from_a_bush[size-(i+1)] + harvesting_from_a_bush[size-(i+2)]
 
 print(f"Максимально собранное количество ягод с 3-х кустов = {max_harvest}")
