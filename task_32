@@ -1,0 +1,19 @@
+# Определить индексы элементов массива (списка),
+# значения которых принадлежат заданному диапазону (т.е. не
+# меньше заданного минимума и не больше заданного
+# максимума)
+import random
+
+list_num = [random.randint(-100, 100) for i in range(int(input("Введите размер массива чисел:")))]
+print(f'Сформированный массив чисел: {list_num}')
+
+min_val, max_val = input("Введите через пробел минимальное и макисальное значения диапазона: ").split()
+min_val=int(min_val)
+max_val=int(max_val)
+
+result = []
+for i in range(len(list_num)):
+    if (list_num[i] >= min_val) and (list_num[i] <= max_val):
+        result.append(i)
+
+print("Индексы значений, попадающих в диапазон: ", result)
