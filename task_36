@@ -1,0 +1,29 @@
+# Задача 36: Напишите функцию print_operation_table(operation, num_rows=6, num_columns=6), которая принимает в качестве аргумента функцию,
+# вычисляющую элемент по номеру строки и столбца. Аргументы num_rows и num_columns указывают число строк и столбцов таблицы, которые должны быть распечатаны.
+# Нумерация строк и столбцов идет с единицы (подумайте, почему не с нуля).
+# Примечание: бинарной операцией называется любая операция, у которой ровно два аргумента, как, например, у операции умножения.
+
+def print_operation_table(operation, num_rows=6, num_columns=6):
+    for i in range(1, num_rows+1):
+        print(*[operation(i,j) for j in range(1, num_columns+1)])
+
+
+
+rows = int(input("Введите количество строк: "))
+columns = int(input("Введите количество столбцов: "))
+
+operation_option = {'1': lambda x,y: x+y, '2': lambda x,y: x*y,
+                    '3': lambda x,y: x//y, '4': lambda x,y: x-y}
+operation = input("Введите номер операции. 1 - сумма; 2 - умножение; 3 - деление; 4 - вычитание: ")
+
+
+if operation == '1':
+    print_operation_table(operation_option['1'], rows, columns)
+elif operation == '2':
+    print_operation_table(operation_option['2'], rows, columns)
+elif operation == '3':
+    print_operation_table(operation_option['3'], rows, columns)
+elif operation == '4':
+    print_operation_table(operation_option['4'], rows, columns)
+else:
+    print("Такой оперции нет в перечне")
